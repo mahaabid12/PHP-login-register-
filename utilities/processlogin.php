@@ -1,0 +1,12 @@
+<?php
+session_start();
+if(isset($_POST['submit'])){
+    if((empty($_POST['email']))||(empty($_POST['password']))){
+        header('location:../login.php');
+    }else{
+        echo($_POST['email']);
+        header('location:../home.php');
+        $_SESSION['user']=$_POST['email'];
+    }
+    }
+?>
